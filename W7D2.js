@@ -23,8 +23,9 @@ const expected4 = "";
 // 1. create a function that can take in a string
 // 2. create an emtpy string variable to hold newstring
 // 3. start the loop starting from the end and ending at the begging of the string provided
-// 4. add each character into the newstring var
-// 5. 
+    // 4. add each character into the newstring variable
+// 5. Return newString outside of loop
+// 6. outside of the function console.log the function call and include the arguments
 
 
 
@@ -34,9 +35,12 @@ function reverseString(str) {
     for (var i = str.length-1; i >= 0; i-- ) {
         newString+= str[i]
     }
-    console.log(newString);
+    return newString
 }
-reverseString(str3)
+console.log(reverseString(str1))
+console.log(reverseString(str2))
+console.log(reverseString(str3))
+console.log(reverseString(str4))
 
 
 
@@ -65,4 +69,37 @@ const expectedC = "SDLC";
 // const strD = "  global   information tracker    ";
 // const expectedD = "GIT";
 
+// take 5-8 mins to write the pseudocode here:
+// 1. create a function that can take in a string
+// 2. create an emtpy string variable to hold newstring
+// 3. create a temp variable to hold the str[i] that we will add into the newstring variable (will have this first equal to str[0])
+// 4. set newString variable += to temp value at str[i] to start us off with the first character ready to go
+// 5. start the for loop to iterate through the string
+    // 6. another if statement for when str[i] == " " blank character:
+        // 7. temp = str[i+1]
+        //8. add this temp value to newString 
+// 8. Need to perform the built in function toUpperCase() to capitalize all the collected characters in newstring and set it equal to newString variable
+// 9. Return newString outside of both loops
+// 10. outside of the function console.log the function call and include the arguments
+
+
 // create the function and decide what params it needs and what it will return
+
+function acronym_string(str){
+    newString = ""
+    temp = str[0]
+    newString += temp
+    for(var i = 0; i<str.length;i++){
+        if(str[i]== " "){
+            temp = str[i+1]
+            newString += temp
+        }
+    }
+    newString = newString.toUpperCase()
+    return newString
+}
+
+console.log(acronym_string(strA))
+console.log(acronym_string(strB))
+console.log(acronym_string(strC))
+console.log(acronym_string("bank of america"))
